@@ -7,28 +7,31 @@ here is a simple usage of this lib, see example folder and find app.js for full 
 
 Note: when use react-native-ptr-control, use it as usual, for example, if scrollComponent is 'ScrollView', pass ScrollView`s props and props of lib provide, such as:
 
+'''
 ScrollView
 
   import React, {Component} from 'react'
   import {View, Text} from 'react-native'
   import PullScrollView from './lib/PullScrollView'
-  export default class MyScrollComponent extends Component {
-    render () {
-      return (
-        <PullScrollView
-          //here is the origin props of ScrollView
-          style={{flex: 1}}
-          showsVerticalScrollIndicator={false}
-          //here is the props of lib provide
-          scrollComponent={'ScrollView'}
-          enableFooterInfinite={false}>
-          <View>
-            <Text>{'scroll content'}</Text>
-          </View>
-        </PullScrollView>
-        )
-    }
+export default class MyScrollComponent extends Component {
+  render() {
+    return (
+      <PullScrollView
+        //here is the origin props of ScrollView
+        style={{ flex: 1 }}
+        showsVerticalScrollIndicator={false}
+        //here is the props of lib provide
+        scrollComponent={'ScrollView'}
+        enableFooterInfinite={false} >
+        <View>
+          <Text>{'scroll content'}</Text>
+        </View>
+      </PullScrollView>
+    )
   }
+}
+'''
+
 FlatList
 
   import React, {Component} from 'react'
@@ -77,31 +80,6 @@ FlatList
     }
   }
 Properties
-
-| Prop        | Description    |  Type    |   Default |  Platform | isRequired|
-    | --------   | -----:   | :----: |
-    | scrollComponent        | mark the scroll component, can be 'ScrollView', 'ListView', 'FlatList', 'VirtualizedList'      |   string   | 'FlatList' | all | yes |
-
-    | getRef        | get the scroll component`s ref      |  func   | None | all | no |
-
-    | enableHeaderRefresh        | whether to enable header refresh      |  bool    | true |
-    all | no|
-
-    |setHeaderHeight |	if header refresh is set, this prop mark the header height, if header refresh is set, this prop should be set |	number|	60 |	Android|	no|
-    |onTopReachedThreshold	|threshold to trigger refresh|	number|	10|	Android	| no|
-
-    |renderHeaderRefresh	| render the custom component of refresh header, and the gestureStatus and offset will be passed, see example for detail	|func	|default function|	all|	no|
-
-    |onHeaderRefreshing	 | when release to refresh, this fun will be called, see example for detail|	func|	default function|	all|	no|
-    |pullFriction	| when scroll component is not full of children, pull to refresh is controlled by gesture, and this prop controls how fast to pull down, range: 0 ~ 1	|number|	0.6	|Android|	no|
-
-    |enableFooterInfinite	| whether to enable footer load-more |	bool |	true |	all|	no|
-
-    |setFooterHeight |	if footer load-more is set, this prop mark the footer height, if footer load-more is set, this prop should be set |	number	| 60 |	Android	| no |
-    |onEndReachedThreshold	| threshold to trigger load-more |	number |	10	 |Android	|no|
-    |renderFooterInfinite	 | render the custom component of load-more, and the gestureStatus and offset will be passed, see example for detail	 | func |	default function |	all |  no |
-    |onFooterInfiniting	 | when release to load-more, this fun will be called, see example for detail |	func |	default function |	all|	no |
-
 
 onHeaderRefreshing and onFooterInfiniting
 
