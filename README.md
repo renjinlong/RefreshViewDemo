@@ -3,38 +3,36 @@
 
 Usage
 
-here is a simple usage of this lib, see example folder and find app.js for full usage
+* ScrollView
 
-Note: when use react-native-ptr-control, use it as usual, for example, if scrollComponent is 'ScrollView', pass ScrollView`s props and props of lib provide, such as:
+        import React, {Component} from 'react'
+        import {View, Text} from 'react-native'
+        import PullScrollView from './lib/PullScrollView'
+        export default class MyScrollComponent extends Component {
+          render () {
+            return (
+              <PTRControl
+                //here is the origin props of ScrollView
+                style={{flex: 1}}
+                showsVerticalScrollIndicator={false}
+                //here is the props of lib provide
+                scrollComponent={'ScrollView'}
+                enableFooterInfinite={false}>
+                <View>
+                  <Text>{'scroll content'}</Text>
+                </View>
+              </PTRControl>
+              )
+          }
+        }
+* FlatList
 
-ScrollView
-  import React, {Component} from 'react'
-  import {View, Text} from 'react-native'
-  import PullScrollView from './lib/PullScrollView'
-export default class MyScrollComponent extends Component {
-  render() {
-    return (
-      <PullScrollView
-        //here is the origin props of ScrollView
-        style={{ flex: 1 }}
-        showsVerticalScrollIndicator={false}
-        //here is the props of lib provide
-        scrollComponent={'ScrollView'}
-        enableFooterInfinite={false} >
-        <View>
-          <Text>{'scroll content'}</Text>
-        </View>
-      </PullScrollView>
-    )
-  }
-}
-FlatList
-  import React, {Component} from 'react'
-  import {View, Text} from 'react-native'
-  import PullScrollView from './lib/PullScrollView'
-  export default class MyScrollComponent extends Component {
-    render () {
-      return (
+        import React, {Component} from 'react'
+        import {View, Text} from 'react-native'
+        import PullScrollView from './lib/PullScrollView'
+        export default class MyScrollComponent extends Component {
+        render () {
+        return (
         <PullScrollView
          renderItem={this.renderRow}
           data={this.state.dataSource}
@@ -70,8 +68,8 @@ FlatList
           }}
         />
         )
-    }
-  }
+      }
+      }
 Properties
 
 onHeaderRefreshing and onFooterInfiniting
