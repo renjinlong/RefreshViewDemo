@@ -7,9 +7,7 @@ here is a simple usage of this lib, see example folder and find app.js for full 
 
 Note: when use react-native-ptr-control, use it as usual, for example, if scrollComponent is 'ScrollView', pass ScrollView`s props and props of lib provide, such as:
 
-'''
 ScrollView
-
   import React, {Component} from 'react'
   import {View, Text} from 'react-native'
   import PullScrollView from './lib/PullScrollView'
@@ -30,10 +28,7 @@ export default class MyScrollComponent extends Component {
     )
   }
 }
-'''
-
 FlatList
-
   import React, {Component} from 'react'
   import {View, Text} from 'react-native'
   import PullScrollView from './lib/PullScrollView'
@@ -44,10 +39,8 @@ FlatList
          renderItem={this.renderRow}
           data={this.state.dataSource}
           showsVerticalScrollIndicator={false}
-
           scrollComponent={'FlatList'}
           getRef={ref => this.refOfScrollList = ref}
-
           enableHeaderRefresh={true}
           onTopReachedThreshold={10}
           onHeaderRefreshing={() => {
