@@ -11,7 +11,7 @@ Usage
         export default class MyScrollComponent extends Component {
           render () {
             return (
-              <PTRControl
+              <PullScrollView
                 //here is the origin props of ScrollView
                 style={{flex: 1}}
                 showsVerticalScrollIndicator={false}
@@ -21,7 +21,7 @@ Usage
                 <View>
                   <Text>{'scroll content'}</Text>
                 </View>
-              </PTRControl>
+              </PullScrollView>
               )
           }
         }
